@@ -11,7 +11,7 @@ const getProducts = async () => {
   json.forEach(producto => {
     const productHTML = `
     <div class="product">
-    <img src="https://images.genius.com/ab10b91c63d5dcad0e35e6669113eab9.1000x1000x1.png" alt="Nombre del producto">
+    <img src="https://motorkote.com.co/wp-content/uploads/2022/08/shutterstock_447424972-min-768x768.jpg" alt="Nombre del producto">
     <div class="product-info">
         <h3>${producto.modelo}</h3>
         <p>${producto.marca}</p>
@@ -42,7 +42,7 @@ const getProductsFiltered = (e) =>{
         allProducts.forEach(producto => {
             const productHTML = `
             <div class="product">
-            <img src="https://images.genius.com/ab10b91c63d5dcad0e35e6669113eab9.1000x1000x1.png" alt="Nombre del producto">
+            <img src="https://motorkote.com.co/wp-content/uploads/2022/08/shutterstock_447424972-min-768x768.jpg" alt="Nombre del producto">
             <div class="product-info">
                 <h3>${producto.modelo}</h3>
                 <p>${producto.marca}</p>
@@ -60,7 +60,7 @@ const getProductsFiltered = (e) =>{
         productFiltered.forEach(producto=>{
             const productHTML = `
     <div class="product">
-    <img src="https://images.genius.com/ab10b91c63d5dcad0e35e6669113eab9.1000x1000x1.png" alt="Nombre del producto">
+    <img src="https://motorkote.com.co/wp-content/uploads/2022/08/shutterstock_447424972-min-768x768.jpg" alt="Nombre del producto">
     <div class="product-info">
         <h3>${producto.modelo}</h3>
         <p>${producto.marca}</p>

@@ -12,9 +12,11 @@ main{
 
 #section-login{
     height: 100%;
+
 }
 
 .login-container{
+  background-color: #000;
     display: flex;
     height: 100%;
     justify-content: center;
@@ -45,19 +47,20 @@ main{
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px solid white;
+    border: 1px solid #fff;
     padding: 60px 40px 40px 40px;
     border-radius: 20px;
     position: relative;
     gap: 1.4rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #1e1e1e;
   }
   
   .form p {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: .5px;
-    color: #000;
+    color: #fff;
   }
   
   .container-1 {
@@ -72,7 +75,7 @@ main{
     border: none;
     border-bottom: 1px solid #6c6c6c;
     background: transparent;
-    color: #000;
+    color: #fff;
   }
   
   .main-input:focus {
