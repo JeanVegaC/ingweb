@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Conexión a la base de datos
 $conn = mysqli_connect("localhost", "root", "", "ingweb");
 
@@ -8,12 +8,17 @@ if (!$conn) {
   die("Conexión fallida: " . mysqli_connect_error());
 }
 
+$category = isset($_POST['category']) ? $_POST['category'] : '';
+
 // Consulta a la base de datos
-echo $_SESSION[category];
-if($_SESSION[category])
-$sql = "SELECT * FROM productos";
-else 
-$sql = "SELECT * FROM productos where category = '$category'";
+echo $_SESSION['category'];
+if($_SESSION['category']) {
+  $sql = "SELECT * FROM productos";
+} else {
+  $category = mysqli_real_escape_string($conn, $category); // Se recomienda escapar la variable para evitar inyección SQL
+  $sql = "SELECT * FROM productos WHERE categoria = '$category'";
+}
+
 $resultado = mysqli_query($conn, $sql);
 
 // Crear un array para almacenar los datos de los productos

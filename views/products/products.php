@@ -50,7 +50,7 @@ $rol = validarRol();
                 }
                 ?>
                 <li class="logout li-link">
-                    <a href="../controlers/logout.php">
+                    <a href="../../controlers/logout.php">
                         <i class="uil uil-signout"></i>
                         <span>Log out</span>
                     </a>
@@ -66,10 +66,13 @@ $rol = validarRol();
                             <span>All</span>
                         </li>
                         <li class="li-filter" id="filter-frenos">
-                            <span>Freno</span>
+                            <span>Pastillas</span>
                         </li>
                         <li class="li-filter" id="filter-pastilla">
-                            <span>Pastilla</span>
+                            <span>Discos</span>
+                        </li>
+                        <li class="li-filter" id="filter-pastilla">
+                            <span>Tamboras</span>
                         </li>
                     </ul>
                 </div>
@@ -77,11 +80,29 @@ $rol = validarRol();
                 <div class="products" id="products-container">
                 </div>
             </div>
-
+            </div>
+            <div class="shop-car"> 
+                <span class="count-shopping">0</span>
+                <i class="uil uil-shopping-cart"></i>
+            </div>
+            <div class="modal-overlay"></div>
+            <div class="shopping-modal" id="list-shop">
+                <header>
+                    <i class="uil uil-times" id="close-shoppingModal"></i>
+                </header>
+                <div class="shopping-list" id="shopping-list"></div>
+                <div class="shopping-total">
+                    <div class="total">
+                        <span>TOTAL</span>
+                        <span class="price-total"></span>
+                    </div>
+                    <div class="send-order">Realizar Pedido</div>
+                </div>
             </div>
         </section>
     </main>
     <script src="mapProducts.js"></script>
+    <script src="shopCar.js"></script>
 </body>
 
 </html>
