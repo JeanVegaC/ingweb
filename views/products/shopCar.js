@@ -57,6 +57,6 @@ document.querySelector('.send-order').addEventListener('click', e=>{
   
   mensaje += "Precio total: $" + total;
   
-  var url = "https://wa.me/" + 918236061 + "?text=" + encodeURIComponent(mensaje);
+  var url = "https://wa.me/" + 967216577 + "?text=" + encodeURIComponent(mensaje);
   window.open(url);
 })
