@@ -16,8 +16,8 @@ $resultado = mysqli_query($conn, $sql);
 $productos = array();
 
 // Iterar sobre los resultados de la consulta y almacenar los datos en el array
-while ($fila = mysqli_fetch_assoc($resultado)) {
-  $productos[] = $fila;
+while ($row = mysqli_fetch_assoc($resultado)) {
+  $productos[] = $row;
 }
 
 

@@ -2,7 +2,7 @@ let allProducts = [];
 const productsContainer = document.getElementById("products-container");
 let buttonsAddToCar = [];
 let countShopping = 0;
-const productsPurchased = [];
+let productsPurchased = [];
 
 const getProducts = async () => {
   try {

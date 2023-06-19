@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bienvenida</title>
+  <title>Fagham S.A.C</title>
 </head>
 <body>
  <?php	

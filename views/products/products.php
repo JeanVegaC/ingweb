@@ -20,7 +20,9 @@ $rol = validarRol();
 <body>
     <main>
         <nav class="nav-home">
-            <i class="logo uil uil-car"></i>
+            <a href="../home.php">
+                <i class="logo uil uil-car"></i>  
+            </a>
             <ul class="ul-links">
                 <li class="li-link">
                     <a href="../home.php">
@@ -41,7 +43,7 @@ $rol = validarRol();
                 } else {
                 ?>
                     <li class="li-link">
-                        <a href="">
+                        <a href="./logistics/logistics.php">
                             <i class="uil uil-tag"></i>
                             <span>Logistic</span>
                         </a>

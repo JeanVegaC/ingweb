@@ -16,7 +16,7 @@
     <label for="username">User</label>
   </div>
     <div class="group">
-      <input id="password" name="password" required="true" class="main-input" type="text">
+      <input id="password" name="password" required="true" class="main-input" type="password">
       <span class="highlight-span"></span>
       <label for="password">password</label>
     </div>

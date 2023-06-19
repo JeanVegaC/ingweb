@@ -25,16 +25,15 @@ productSection.querySelector('.shop-car').addEventListener('click', ()=>{
         );
         calculateTotal(productsPurchased);
       });
-
-    //   
-
 });
 
-document.getElementById('close-shoppingModal').addEventListener('click', ()=>{
+const closeShoppingModal = ()=>{
     document.querySelector('body').classList.remove('disable-scroll');
     productSection.querySelector('.modal-overlay').classList.remove('show-overlay');
     document.getElementById('list-shop').classList.remove('show-shoppingModal');
-});
+}
+
+document.getElementById('close-shoppingModal').addEventListener('click', closeShoppingModal);
 
 const calculateTotal = (e)=>{
     total = 0;
@@ -46,17 +45,65 @@ const calculateTotal = (e)=>{
 
 
 document.querySelector('.send-order').addEventListener('click', e=>{
-  var mensaje = "Cotización de productos:\n\n";
   
+  let message = "Cotización de productos:\n\n";
   productsPurchased.forEach(function(producto) {
-    mensaje += "Modelo: " + producto.modelo + "\n";
-    mensaje += "Marca: " + producto.marca + "\n";
-    mensaje += "Año: " + producto.año + "\n";
-    mensaje += "Precio: $" + producto.precio + "\n\n";
+    message += "Modelo: " + producto.modelo + "\n";
+    message += "Marca: " + producto.marca + "\n";
+    message += "Año: " + producto.año + "\n";
+    message += "Precio: S/." + producto.precio + "\n\n";
   });
+
+  const sale = {
+    detail: message,
+    total,
+    currentDate: getCurrentDate(),
+  }
+  saveSale(sale);
+
+  message += "Precio total: S/." + total;
   
-  mensaje += "Precio total: $" + total;
   
-  var url = "https://wa.me/" + 967216577 + "?text=" + encodeURIComponent(mensaje);
-  window.open(url);
+  var url = "https://wa.me/" + 967216577 + "?text=" + encodeURIComponent(message);
+  setTimeout(() => {
+    window.open(url);
+  }, 1000);
+  productsPurchased = [];
+  closeShoppingModal();
+  countShopping = 0;
+  document.querySelector(".count-shopping").innerHTML = countShopping;
 })
+
+// CREAR COTIZACIÓN Y DIRIGIRLA A LA BASE DE DATOS
+const saveSale = (sale)=>{
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(sale),
+  }
+
+
+  fetch('../../services/postSale.php',options)
+  .catch(e=>{
+    {
+      console.log('Hubo un error al guardar la venta', e);
+    };
+  })
+}
+
+const getCurrentDate = ()=>{
+  function agregarCero(valor) {
+    if (valor < 10) {
+      return "0" + valor;
+    }
+    return valor;
+  }
+
+  let now = new Date();
+  let day = agregarCero(now.getDate());
+  let month = agregarCero(now.getMonth() + 1);
+  let year = now.getFullYear();
+  let hour = agregarCero(now.getHours());
+  let minutes = agregarCero(now.getMinutes());
+
+  return day + "/" + month + "/" + year + " " + hour + ":" + minutes;
+}
