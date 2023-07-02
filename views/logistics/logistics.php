@@ -14,6 +14,7 @@ $rol = validarRol();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="../../style/logistics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 
@@ -60,22 +61,31 @@ $rol = validarRol();
             </ul>
         </nav>
         <section class="logistics-section" id=="logistics-section">
-        <table id="ventasTable">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Detalle</th>
-        <th>Total</th>
-        <th>Fecha</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
+            <table id="ventasTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Detalle</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section class="grafics-section">
+            <h1>Gráfico de barras de montos de ventas</h1>
+            <div class="grafics-container">
+                <canvas id="myChart1"></canvas>
+                <canvas id="myChart2"></canvas>
+            </div>
         </section>
     </main>
-    <script src="mapSales.js"></script>
+    <script src="mapSales.js" type="module"></script>
+    <script src="grafics.js" type="module"></script>
+    
 </body>
 
 </html>
