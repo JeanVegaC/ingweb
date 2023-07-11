@@ -21,27 +21,18 @@ $rol = validarRol();
 <body>
     <main>
         <nav class="nav-home">
-            <a href="../home.php">
+            <a href="../../index.php">
                 <i class="logo uil uil-car"></i>
             </a>
             <ul class="ul-links">
                 <li class="li-link">
-                    <a href="../home.php">
+                    <a href="../../index.php">
                         <i class="uil uil-estate"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <?php
-                if ($rol == 'cliente') {
-                ?>
-                    <li class="li-link">
-                        <a href="">
-                            <i class="uil uil-tag"></i>
-                            <span>Products</span>
-                        </a>
-                    </li>
-                <?php
-                } else {
+                if ($rol && $rol == 'vendedor') {
                 ?>
                     <li class="li-link">
                         <a href="#">
@@ -50,14 +41,38 @@ $rol = validarRol();
                         </a>
                     </li>
                 <?php
+                }else{
+                ?>
+                    <li class="li-link">
+                        <a href="./views/products/products.php">
+                            <i class="uil uil-tag"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                <?php
                 }
+                ?>
+                <?php
+                if ($rol) {
                 ?>
                 <li class="logout li-link">
                     <a href="../../controlers/logout.php">
                         <i class="uil uil-signout"></i>
-                        <span>Log out</span>
+                        <span>Log Out</span>
                     </a>
                 </li>
+                <?php
+                }else{
+                ?>
+                <li class="logout li-link">
+                    <a href="./views/login/login.php">
+                        <i class="uil uil-signout"></i>
+                        <span>Log In</span>
+                    </a>
+                </li>
+                <?php
+                }
+                ?>
             </ul>
         </nav>
         <section class="logistics-section" id=="logistics-section">
@@ -76,7 +91,7 @@ $rol = validarRol();
             </table>
         </section>
         <section class="grafics-section">
-            <h1>Gráfico de barras de montos de ventas</h1>
+            <h1>Gráfico de ventas diarias y mensuales</h1>
             <div class="grafics-container">
                 <canvas id="myChart1"></canvas>
                 <canvas id="myChart2"></canvas>

@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["pass"] = $row["pass"];
     $_SESSION["rol"] = $row["rol"];
     $_SESSION["category"] = $row["category"];
-    header("location: ../views/main.php");
+    header("location: ../index.php");
   } else {
     $_SESSION["error"] = "Nombre de usuario o contraseña incorrectos";
-    header("location: ../index.php");
+    header("location: ../views/login/login.php");
   }
 }
 ?>

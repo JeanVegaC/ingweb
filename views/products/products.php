@@ -1,7 +1,5 @@
 <?php
-include '../../controlers/validateLogin.php';
-validarSesion();
-
+session_start();
 include '../../controlers/validateRol.php';
 $rol = validarRol();
 ?>
@@ -30,9 +28,6 @@ $rol = validarRol();
                         <span>Home</span>
                     </a>
                 </li>
-                <?php
-                if ($rol == 'cliente') {
-                ?>
                     <li class="li-link">
                         <a href="">
                             <i class="uil uil-tag"></i>
@@ -40,7 +35,7 @@ $rol = validarRol();
                         </a>
                     </li>
                 <?php
-                } else {
+                if ($rol == 'vendedor') {
                 ?>
                     <li class="li-link">
                         <a href="./logistics/logistics.php">
@@ -51,12 +46,27 @@ $rol = validarRol();
                 <?php
                 }
                 ?>
+                <?php
+                if ($rol) {
+                ?>
                 <li class="logout li-link">
                     <a href="../../controlers/logout.php">
                         <i class="uil uil-signout"></i>
-                        <span>Log out</span>
+                        <span>Log Out</span>
                     </a>
                 </li>
+                <?php
+                }else{
+                ?>
+                <li class="logout li-link">
+                    <a href="../../views/login/login.php">
+                        <i class="uil uil-signout"></i>
+                        <span>Log In</span>
+                    </a>
+                </li>
+                <?php
+                }
+                ?>
             </ul>
         </nav>
         <section class="products-section">

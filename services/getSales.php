@@ -14,6 +14,7 @@ if ($result->num_rows > 0) {
 
     // Recorrer los resultados y almacenar los datos en el array
     while ($row = $result->fetch_assoc()) {
+        $row['detail'] = json_decode($row['detail'], true);
         $data[] = $row;
     }
 

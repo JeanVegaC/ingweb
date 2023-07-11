@@ -1,11 +1,9 @@
-/* CREAR BASE DE DATOS CON NOMBRE "ingweb" */
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2023 a las 03:47:37
+-- Tiempo de generación: 11-07-2023 a las 01:26:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -92,24 +90,17 @@ CREATE TABLE `sales` (
   `id` int(20) NOT NULL,
   `detail` varchar(1000) NOT NULL,
   `total` decimal(20,0) NOT NULL,
-  `currentDate` varchar(20) NOT NULL
+  `currentDate` varchar(20) NOT NULL,
+  `message` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `sales`
 --
 
-INSERT INTO `sales` (`id`, `detail`, `total`, `currentDate`) VALUES
-(1, 'Cotización de produc', 100, '18/06/2023 19:23'),
-(2, 'Cotización de produc', 100, '18/06/2023 19:43'),
-(3, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\n', 100, '18/06/2023 19:44'),
-(4, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\nModelo: TOYOTA RIDEX\nMarca: Frenosa\nAño: 2018\nPrecio: S/.200\n\nModelo: Toyota Corola Hq\nMarca: Frenosa\nAño: 2019\n', 602, '18/06/2023 19:45'),
-(5, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\n', 100, '18/06/2023 19:51'),
-(6, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\n', 100, '18/06/2023 19:52'),
-(7, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\n', 100, '18/06/2023 19:52'),
-(8, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\nModelo: TOYOTA RIDEX\nMarca: Frenosa\nAño: 2018\nPrecio: S/.200\n\n', 300, '18/06/2023 19:54'),
-(9, 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\nModelo: TOYOTA RIDEX\nMarca: Frenosa\nAño: 2018\nPrecio: S/.200\n\nModelo: Toyota Corola Azul\nMarca: Frenosa\nAño: 2019\nPrecio: S/.41\n\n', 341, '18/06/2023 19:55'),
-(10, 'Cotización de productos:\n\nModelo: Hyundai Accent Azul\nMarca: Frenosa\nAño: 2019\nPrecio: S/.47\n\nModelo: Nissan AD Honda\nMarca: King\nAño: 2019\nPrecio: S/.47\n\nModelo: Daewo Racer Cielo Lemans\nMarca: Wurt\nAño: 2019\nPrecio: S/.100\n\n', 194, '18/06/2023 20:45');
+INSERT INTO `sales` (`id`, `detail`, `total`, `currentDate`, `message`) VALUES
+(1, 'Array', 100, '10/07/2023 14:41', 'Cotización de productos:\n\nModelo: TOYOTA BOSCH\nMarca: Frenosa\nAño: 2020\nPrecio: S/.100\n\n'),
+(2, '[{\"model\":\"TOYOTA RIDEX\",\"brand\":\"Frenosa\",\"year\":\"2018\",\"price\":\"200\"},{\"model\":\"Toyota Corola Azul\",\"brand\":\"Frenosa\",\"year\":\"2019\",\"price\":\"41\"}]', 241, '10/07/2023 14:52', 'Cotización de productos:\n\nModelo: TOYOTA RIDEX\nMarca: Frenosa\nAño: 2018\nPrecio: S/.200\n\nModelo: Toyota Corola Azul\nMarca: Frenosa\nAño: 2019\nPrecio: S/.41\n\n');
 
 -- --------------------------------------------------------
 
@@ -169,7 +160,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

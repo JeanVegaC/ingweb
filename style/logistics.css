@@ -91,6 +91,7 @@ main .nav-home .logout{
 /* ======= LOGISTICS SECTION ========*/
 
 .logistics-section {
+    height: 40%;
     width: 100%;
     border-collapse: collapse;
     background: #000;
@@ -123,6 +124,7 @@ main .nav-home .logout{
   }
   
   .grafics-section{
+    height: 100%;
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;

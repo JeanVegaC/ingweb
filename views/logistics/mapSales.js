@@ -51,7 +51,8 @@ const getSales = () => {
     .then(data => {
       const ventasTable = document.getElementById("ventasTable");
       const tbody = ventasTable.querySelector("tbody");
-
+      console.log(data);
+      
       // Limpiar la tabla antes de agregar las nuevas filas
       while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
@@ -66,7 +67,7 @@ const getSales = () => {
         row.appendChild(idCell);
 
         const detalleCell = document.createElement("td");
-        detalleCell.textContent = venta.detail;
+        detalleCell.textContent = venta.message;
         detalleCell.classList.add("venta-detalle"); 
         row.appendChild(detalleCell);
 

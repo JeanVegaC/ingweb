@@ -45,9 +45,19 @@ const calculateTotal = (e)=>{
 
 
 document.querySelector('.send-order').addEventListener('click', e=>{
-  
+  let detail = [];
   let message = "Cotización de productos:\n\n";
   productsPurchased.forEach(function(producto) {
+
+    const obj = {
+      model: producto.modelo,
+      brand: producto.marca,
+      year: producto.año,
+      price: producto.precio
+    }
+
+    detail.push(obj);
+
     message += "Modelo: " + producto.modelo + "\n";
     message += "Marca: " + producto.marca + "\n";
     message += "Año: " + producto.año + "\n";
@@ -55,7 +65,8 @@ document.querySelector('.send-order').addEventListener('click', e=>{
   });
 
   const sale = {
-    detail: message,
+    detail,
+    message,
     total,
     currentDate: getCurrentDate(),
   }
@@ -76,6 +87,7 @@ document.querySelector('.send-order').addEventListener('click', e=>{
 
 // CREAR COTIZACIÓN Y DIRIGIRLA A LA BASE DE DATOS
 const saveSale = (sale)=>{
+  console.log('sale', sale);
   const options = {
     method: 'POST',
     body: JSON.stringify(sale),
